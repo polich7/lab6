@@ -1,6 +1,6 @@
-from queue import Queue #очереди
-from tkinter import * # для интерфейса
-from threading import Thread # для запуска нескольких операций одновременно
+from queue import Queue
+from tkinter import *
+from threading import Thread
 
 
 def foo(q, n):
@@ -12,7 +12,7 @@ def foo(q, n):
 
 
 def click_button():
-    q = Queue(5) # всего может быть помещенно 5 элементов
+    q = Queue(5)
     th1 = Thread(target=foo, args=(q, 1))
     th2 = Thread(target=foo, args=(q, 2))
     th1.start()
@@ -23,7 +23,7 @@ def click_button():
 
     q.put(None)
     q.put(None)
-    th1.join() #ожидать завершения потоков
+    th1.join()
     th2.join()
 
 def proc(file):
