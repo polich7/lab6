@@ -1,15 +1,14 @@
 from queue import Queue
-from tkinter import *
+from tkinter import *  # графический интерфейс
 from threading import Thread
 
-
+# кнопка 1 - вывод на консоль
 def foo(q, n):
     while TRUE:
         item = q.get()
         if item is None:
             break
         print("count: %d/%d " % (n, item))
-
 
 def click_button():
     q = Queue(5)
@@ -26,11 +25,13 @@ def click_button():
     th1.join()
     th2.join()
 
+# кнопка 2 - вывод в файл
 def proc(file):
     with open(file) as f:
         for line in f:
             lst = line.split()
             print(lst)
+
 def click_button1():
     q1 = Queue()
     p1 = Thread(target=proc, args=('f1.txt',))
@@ -40,6 +41,7 @@ def click_button1():
     p1.join()
     p2.join()
 
+# параметры окна вывода
 root = Tk()
 root.title("GUI на Python")
 root.geometry("300x250")
