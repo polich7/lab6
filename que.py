@@ -1,7 +1,7 @@
 from queue import Queue
 from tkinter import *  # графический интерфейс
 from threading import Thread
-
+# чудом сдали
 # кнопка 1 - вывод на консоль
 def foo(q, n):
     while TRUE:
@@ -17,7 +17,7 @@ def click_button():
     th1.start()
     th2.start()
 
-    for i in range(50):
+    for i in range(500000):
         q.put(i)
 
     q.put(None)
